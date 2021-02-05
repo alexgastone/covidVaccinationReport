@@ -1,6 +1,6 @@
 # COVID Vaccination Report
 
-Fetches and displays daily reports of wordlwide vaccination progress. See it [here](https://datastudio.google.com/s/mAm4iISx1X0).
+Fetches and displays daily reports of wordlwide vaccination progress. See the Google Data Studio Dashboard [here](https://datastudio.google.com/s/mAm4iISx1X0).
 
 The data is pulled from [Daniel Preda's Kaggle Dataset](https://www.kaggle.com/gpreda/covid-world-vaccination-progress), which is in turn pulled from the public [Our World In Data COVID dataset](https://github.com/owid/covid-19-data).
 
