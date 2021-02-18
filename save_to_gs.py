@@ -1,10 +1,11 @@
 import pygsheets
 import pandas as pd
-import sys
+import os
 
 def main():
 
-	sys.path.append('/Users/alexandra/Documents/DS_projects/covidVaccination')
+	path="/Users/alexandra/Documents/DS_projects/covidVaccination"
+	os.chdir(path)
 
 	#authorization
 	gc = pygsheets.authorize(service_file='covidvaccinations-c3302809ceaa.json')
