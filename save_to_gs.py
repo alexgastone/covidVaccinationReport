@@ -1,14 +1,18 @@
 import pygsheets
 import pandas as pd
+import sys
 
 def main():
+
+	sys.path.append('/Users/alexandra/Documents/DS_projects/covidVaccination')
+
 	#authorization
 	gc = pygsheets.authorize(service_file='covidvaccinations-c3302809ceaa.json')
 
 	# load csv file pandas
 	data = pd.read_csv('country_vaccinations.csv')
 
-	#open the google spreadsheet (where 'PY to Gsheet Test' is the name of my sheet)
+	#open the google spreadsheet
 	sh = gc.open('CovidVaccinations')
 
 	#select the first sheet 
