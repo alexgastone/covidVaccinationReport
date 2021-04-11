@@ -1,6 +1,7 @@
 import pygsheets
 import pandas as pd
 import os
+from datetime import datetime, timedelta
 
 def main():
 
@@ -13,6 +14,12 @@ def main():
 	# load csv file pandas
 	data = pd.read_csv('country_vaccinations.csv')
 
+	# select last n days
+	num_days = 20
+	this_date = datetime.date(datetime.now() - timedelta(days=num_days)).strftime('%Y-%m-%d')
+
+	fil_data = data.loc[data.date >= this_date]
+
 	#open the google spreadsheet
 	sh = gc.open('CovidVaccinations')
 
@@ -20,7 +27,7 @@ def main():
 	wks = sh[0]
 
 	#update the first sheet with df, starting at cell B2. 
-	wks.set_dataframe(data, (0,0))
+	wks.set_dataframe(fil_data, (0,0))
 
 if __name__ == '__main__':
 	main()
